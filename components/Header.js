@@ -107,7 +107,7 @@ function Header({ placeholder }) {
                 className="w-12 pl-2 text-lg outline-none text-red-400"
               />
             </div>
-            <div className="flex w-screen md:w-[580px]">
+            <div className="flex w-full md:w-[580px]">
               <button className="flex-grow text-gray-500" onClick={resetInput}>
                 Cancel
               </button>
