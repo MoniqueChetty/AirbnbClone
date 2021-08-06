@@ -49,7 +49,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="sticky top-0 z-40 grid grid-cols-3 bg-white shadow-md p-5 md:px-10 ">
+    <header className="sticky top-0 z-40 grid grid-cols-3 w-screen bg-white shadow-md p-5 md:px-10  ">
       {/* Left logo */}
       <div
         onClick={() => router.push("/")}
