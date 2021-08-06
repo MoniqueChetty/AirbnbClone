@@ -98,7 +98,7 @@ function Header({ placeholder }) {
               <h2 className="text-2xl flex-grow font-semibold">
                 Number of Guests
               </h2>
-              <UsersIcon className="h-5" />
+              <UsersIcon className="h-5 justify-right" />
               <input
                 value={noOfGuests}
                 onChange={(e) => setNoOfGuests(e.target.value)}
@@ -108,10 +108,16 @@ function Header({ placeholder }) {
               />
             </div>
             <div className="flex w-screen md:w-[580px]">
-              <button className="flex-grow text-gray-500" onClick={resetInput}>
+              <button
+                className="w-1/2 md:flex-grow text-gray-500"
+                onClick={resetInput}
+              >
                 Cancel
               </button>
-              <button className="flex-grow text-red-400" onClick={search}>
+              <button
+                className="w-1/2 md:flex-grow text-red-400"
+                onClick={search}
+              >
                 Search
               </button>
             </div>
