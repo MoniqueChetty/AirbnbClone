@@ -94,7 +94,7 @@ function Header({ placeholder }) {
               rangeColors={["#FD5B61"]}
               onChange={handleSelect}
             />
-            <div className="flex items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
+            <div className="flex w-screen md:w-[580px] items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
               <h2 className="text-2xl flex-grow font-semibold">
                 Number of Guests
               </h2>
@@ -107,7 +107,7 @@ function Header({ placeholder }) {
                 className="w-12 pl-2 text-lg outline-none text-red-400"
               />
             </div>
-            <div className="flex ">
+            <div className="flex w-screen md:w-[580px]">
               <button className="flex-grow text-gray-500" onClick={resetInput}>
                 Cancel
               </button>
