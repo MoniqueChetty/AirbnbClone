@@ -49,7 +49,7 @@ function Header({ placeholder }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10 ">
+    <header className="sticky top-0 z-40 grid grid-cols-3 bg-white shadow-md p-5 md:px-10 ">
       {/* Left logo */}
       <div
         onClick={() => router.push("/")}
@@ -85,37 +85,39 @@ function Header({ placeholder }) {
       </div>
 
       {/* Date range picker */}
-      {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto">
-          <DateRangePicker
-            ranges={[selectionRange]}
-            minDate={new Date()}
-            rangeColors={["#FD5B61"]}
-            onChange={handleSelect}
-          />
-          <div className="flex items-center border-b mb-4">
-            <h2 className="text-2xl flex-grow font-semibold">
-              Number of Guests
-            </h2>
-            <UsersIcon className="h-5" />
-            <input
-              value={noOfGuests}
-              onChange={(e) => setNoOfGuests(e.target.value)}
-              min={1}
-              type="number"
-              className="w-12 pl-2 text-lg outline-none text-red-400"
+      <div className="absolute top-20 left-[30%]   z-50">
+        {searchInput && (
+          <div className="flex flex-col col-span-3 mx-auto mt-5 rounded-xl bg-white p-5 z-50 shadow-md">
+            <DateRangePicker
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={["#FD5B61"]}
+              onChange={handleSelect}
             />
+            <div className="flex items-center border-b mb-4 top-auto right-auto bottom-auto left-auto bg-white">
+              <h2 className="text-2xl flex-grow font-semibold">
+                Number of Guests
+              </h2>
+              <UsersIcon className="h-5" />
+              <input
+                value={noOfGuests}
+                onChange={(e) => setNoOfGuests(e.target.value)}
+                min={1}
+                type="number"
+                className="w-12 pl-2 text-lg outline-none text-red-400"
+              />
+            </div>
+            <div className="flex ">
+              <button className="flex-grow text-gray-500" onClick={resetInput}>
+                Cancel
+              </button>
+              <button className="flex-grow text-red-400" onClick={search}>
+                Search
+              </button>
+            </div>
           </div>
-          <div className="flex ">
-            <button className="flex-grow text-gray-500" onClick={resetInput}>
-              Cancel
-            </button>
-            <button className="flex-grow text-red-400" onClick={search}>
-              Search
-            </button>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }
