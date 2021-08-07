@@ -85,9 +85,9 @@ function Header({ placeholder }) {
       </div>
 
       {/* Date range picker */}
-      <div className="md:absolute w-screen md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
+      <div className="md:absolute md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
         {searchInput && (
-          <div className="flex flex-col md:col-span-3  w-max mt-5 rounded-xl bg-white p-5 z-50 shadow-md">
+          <div className="flex flex-col md:col-span-3  lg:w-max mt-5 rounded-xl bg-white p-5 z-50 shadow-md">
             <DateRangePicker
               ranges={[selectionRange]}
               minDate={new Date()}
@@ -98,7 +98,7 @@ function Header({ placeholder }) {
               <h2 className="text-2xl flex-grow font-semibold">
                 Number of Guests
               </h2>
-              <UsersIcon className="h-5 justify-right" />
+              <UsersIcon className="h-5 justify-end" />
               <input
                 value={noOfGuests}
                 onChange={(e) => setNoOfGuests(e.target.value)}
