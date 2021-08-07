@@ -69,7 +69,7 @@ function Header({ placeholder }) {
           onChange={(e) => setSearchInput(e.target.value)}
           type="text"
           className=" flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400"
-          placeholder={placeholder || "Start Your Search..."}
+          placeholder={placeholder || "Start Your Search"}
         />
         <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2" />
       </div>
@@ -85,7 +85,7 @@ function Header({ placeholder }) {
       </div>
 
       {/* Date range picker */}
-      <div className="absolute w-screen md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
+      <div className="md:absolute w-screen md:w-[580px] left-1 top-20 md:left-[20%] lg:left-[30%]   z-50">
         {searchInput && (
           <div className="flex flex-col md:col-span-3  w-max mt-5 rounded-xl bg-white p-5 z-50 shadow-md">
             <DateRangePicker

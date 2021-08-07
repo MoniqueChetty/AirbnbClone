@@ -4,30 +4,25 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
-  // console.log(searchResults);
-
+ 
   const { location, startDate, endDate, noOfGuests } = router.query;
-  // console.log(format(new Date(startDate), "dd MMMM yy"));
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  // console.log(formattedStartDate);
   const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
-  // console.log(formattedEndDate);
-  const range = ` ${formattedStartDate} - ${formattedEndDate}`;
-  // console.log(range);
+  const range = ` ${formattedStartDate} - ${formattedEndDate}`;  // console.log(range);
 
   return (
     <div className="h-screen">
       {/* Header */}
-      <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
+      <Header placeholder={`${location} |  | ${noOfGuests} guests`} />
 
       <main className="flex">
         {/* Left section Search results */}
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
-            {/* 300+ Stays {range} - for {noOfGuests} Guests */}
             300+ Stays {range} - for {noOfGuests} Guests
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
@@ -59,6 +54,9 @@ function Search({ searchResults }) {
         </section>
         {/* headles ui?? */}
         {/* Right section Map */}
+        <section className="hidden xl:inline-flex xl:min-w-[600px] ">
+          <Map searchResults={searchResults}/>
+        </section>
       </main>
       <Footer />
     </div>
