@@ -17,7 +17,7 @@ function Search({ searchResults }) {
   return (
     <div className="h-screen">
       {/* Header */}
-      <Header placeholder={`${location} |  | ${noOfGuests} guests`} />
+      <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
       <main className="flex">
         {/* Left section Search results */}
